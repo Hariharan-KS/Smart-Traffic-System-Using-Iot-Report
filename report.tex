@@ -1,0 +1,90 @@
+% LaTeX Template for Project Report,
+% It is advisable to learn the basics of LaTeX before using this template.
+% A good resource to start with is http://en.wikibooks.org/wiki/LaTeX/
+% Empty space after chapter/section/subsection titles can be used to insert text.
+%
+% Just compile this file after making all required changes.
+
+\documentclass[12pt,a4paper]{report}
+\usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={Smart Traffic System Management using IOT}, pdfauthor={Hariharan K, Dhyan}, pdfsubject={Project Report}, pdfkeywords={report}]{hyperref} %for creating links in the pdf version and other additional pdf attributes, no effect on the printed document
+
+
+%adjust your page margins here
+\usepackage[top=0.8in, bottom=0.75in, left=1.25in,right=1in]{geometry} % setting the page alignment with this package
+
+%To change line spacing in a specific environment you will use the second way, which is to add \usepackage{setspace} to the preamble and then you can make use of the command \singlespacing, \doublespacing, or \onehalfspacing to specify the line spacing for all sections and paragraphs until you sued another command to change it.
+\usepackage{setspace} 
+
+%for page borders use this package
+\usepackage{fancybox}
+
+%use this package to change the default chapter number and name display
+\usepackage{titlesec}
+
+%for embedding images
+\usepackage[pdftex]{graphicx} 
+
+%for proper url entries
+\usepackage{url} 
+
+%for set color to text
+\usepackage[dvipsnames]{xcolor}
+
+%for using Rs. symbol
+\usepackage{tfrupee}
+
+% Renewed commands to set the titles of various pages correctly.
+\renewcommand\contentsname{\centering TABLE OF CONTENTS}
+   \renewcommand\listfigurename{\centering LIST OF FIGURES}
+   \renewcommand\listtablename{\centering LIST OF TABLES}
+   \renewcommand\bibname{\centering REFERENCES}
+   \renewcommand\appendixname{APPENDIX}
+
+%to display chapter number left and chapter title center
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}{\filright\chaptertitlename\ \thechapter}
+  {20pt}{\Huge\filcenter}
+	
+\begin{document}
+\renewcommand\bibname{References} %Renames "Bibliography" to "References" on ref page
+
+
+\input{./title.tex}
+\input{./certificate.tex}
+\input{./acknowledgements.tex}
+\input{./abstract.tex}
+
+
+\pagenumbering{roman} %numbering before main content starts
+\tableofcontents
+\listoffigures
+% \listoftables
+
+\newpage
+\pagenumbering{arabic} %reset numbering to normal for the main content
+
+\onehalfspacing
+\input{./introduction.tex} % adds the introduction page
+% \input{./literature-survey.tex} % adds the Literature Survey page
+    % included in introduction.tex
+\input{./requirements.tex}
+\input{./project-design.tex} % adds the Project Design
+\input{./implementation.tex} % adds the implementation
+\input{./results.tex}				% adds result page
+\input{./conclusion.tex} % adds conclusion page
+
+\pagebreak
+% Appendices.
+%  \appendix
+% \input{./appendix.tex}
+ 
+
+\pagebreak
+\addcontentsline{toc}{chapter}{References}
+\begin{singlespace}
+  \begin{small}
+	\bibliographystyle{unsrt} %unsrt - references appear in the order in which they were cited and are labeled with numbers
+	\bibliography{references}
+  \end{small}
+\end{singlespace}
+\end{document}
